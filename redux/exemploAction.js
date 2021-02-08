@@ -1,6 +1,8 @@
-const button = document.querySelector('#button');
+/*const button = document.querySelector('#button');
 button.addEventListener('click', () => {
-    store.dispatch(incrementar())
+    store.dispatch(incrementar());
+    //para verificar se esta incremetando e so no console do navegador 
+    // chamar store.getState();
 });
 
 //Para evitar bugs sempre colocar o Type em constantes
@@ -49,3 +51,4 @@ store.dispatch({ type: INCREMENTAR }); // exemplo sem function action
 store.dispatch(incrementar()); // exemplo com function action 
 state = store.getState();
 console.log(state);
+*/
