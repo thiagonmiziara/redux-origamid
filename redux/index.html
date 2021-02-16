@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redux</title>
+    <script src="./immer.umd.production.min.js"></script>
     <script src="./redux.min.js"></script>
 </head>
 
@@ -25,40 +26,11 @@
         <button id="fechar">Fechar</button>
     </div>
 
-    <script src="./immer.umd.production.min.js"></script>
 
 
-    <script>
-        const initialState = {
-            nome: "Thiago",
-            idade: 33
-        }
 
-        const reducer = immer.produce((state, action) => {
-            switch (action.type) {
-                case 'MUDAR_NOME':
-                    state.nome = action.payload
-                    break;
-                case 'MUDAR_IDADE':
-                    state.idade = action.payload
-                    break;
-            }
-        }, initialState);
-
-        const store = Redux.createStore(
-            reducer,
-            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-        );
-
-        store.dispatch({
-            type: 'MUDAR_NOME',
-            payload: "Flamengo"
-        });
-
-        store.dispatch({
-            type: 'MUDAR_IDADE',
-            payload: 2021
-        })
+    <script type="module">
+        import store from './store/configureStore.js'; import {incrementar} from './store/contador.js'; store.subscribe(()=>{ console.log('funfou'); }); store.dispatch(incrementar());
     </script>
 </body>
 
