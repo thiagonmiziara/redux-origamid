@@ -5,13 +5,19 @@ const obj1 = {
     time: 'flamengo',
     apelido: 'mengão'
 }
+
+/* exemplo com immer
+const obj2 = immer.produce(obj1, (draft) => {
+    draft.apelido = 'Campeão'
+})
+console.log(obj2);
+*/
+
+//obj sem immer
+
 const obj2 = Object.assign({}, obj1, { time: 'Campeão' });
 console.log(obj1);
 console.log(obj2);
-
-
-
-
 
 const initialState = {
     nome: "Thiago",
